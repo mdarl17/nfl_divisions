@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get '/teams', to: 'teams#index'
   get '/divisions', to: 'divisions#index'
+  get '/divisions/params[:id]', to: 'divisions#show'
+
 end

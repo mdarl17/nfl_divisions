@@ -1,7 +1,7 @@
 <h1>NFL Divisions</h1>
-<container class="container">
-  <article class="conference">
-    <%= @divisions %>
-    <!-- <% @divisions %> -->
-  </article>
-</container>
+<div class="container">
+  <h2>AFC</h2>
+  <% @divisions.each do |division| %>
+    <%= division.get_conference("AFC") %>
+  <% end %>
+</div>
