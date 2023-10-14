@@ -1,0 +1,12 @@
+<link type="text/css" src="./app/stylesheets/team_index.css"></link>
+
+<% @teams.each.with_index do |team, idx| %>
+    <% if idx % 4 == 0 %>
+      <h1><%= team.division.name %></h1>
+      <p><%= team.name %></p>
+    <% else %>
+      <p><%= team.name %></p>
+    <% end %>
+    <p class="t_name">founded: <%= team.year_started %></p>
+<% end %>
+   
