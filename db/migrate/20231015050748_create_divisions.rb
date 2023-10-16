@@ -3,7 +3,7 @@ class CreateDivisions < ActiveRecord::Migration[7.0]
     create_table :divisions do |t|
       t.string :name
       t.string :conference
-      t.boolean :playoff_bye
+      t.boolean :sb_five
 
       t.timestamps
     end

@@ -1,12 +1,13 @@
-<link type="text/css" src="./app/stylesheets/team_index.css"></link>
 
-<% @teams.each.with_index do |team, idx| %>
-    <% if idx % 4 == 0 %>
-      <h1><%= team.division.name %></h1>
-      <p><%= team.name %></p>
-    <% else %>
-      <p><%= team.name %></p>
+<h1>NFL Teams</h1>
+  <article class="container">
+    <% @teams.each do |team| %>
+      <p class="team"><a href="/teams/<%= team.id %>"><%= team.name %></a></p>
+      <p>Wins: <%= team.wins %>
+      <p>Losses: <%= team.losses %>
+      <p>Ties: <%= team.ties %>
+      <p>Rank: <%= team.rank %>
+      <p class="last">Start Date: <%= team.year_started %>
     <% end %>
-    <p class="t_name">founded: <%= team.year_started %></p>
-<% end %>
+  </article>
    

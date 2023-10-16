@@ -1,8 +1,13 @@
 class Division < ApplicationRecord
   has_many :teams
 
-  def get_conference(conf)
-    self.conference
-    self.name.split(" ")[1]
+  def self.sort_by_created_date
+    Division.order(created_at: :desc)
   end
+
+  def count
+    # require 'pry'; binding.pry
+    teams.count
+  end
+
 end

@@ -1,0 +1,7 @@
+<%= link_to "Teams", "/teams" %>
+<article class="teams_show">
+  <h2><a href="<%= @division.id %>/teams"><%= @division.name %></a></h2>
+  <p>Conference:&nbsp <%= @division.conference %></p>
+  <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></p>
+  <p>No. Teams: <%= @division.count %></p>
+</article>

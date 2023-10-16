@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_13_193930) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_15_051111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
     t.string "conference"
-    t.boolean "playoff_bye"
+    t.boolean "sb_five"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,11 +27,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_13_193930) do
     t.integer "wins"
     t.integer "losses"
     t.integer "ties"
+    t.integer "rank"
     t.integer "year_started"
     t.boolean "super_bowl"
+    t.bigint "division_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "division_id", null: false
     t.index ["division_id"], name: "index_teams_on_division_id"
   end
 

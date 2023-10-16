@@ -1,0 +1,12 @@
+<%= link_to "Teams", "/teams" %>
+
+<h2><%= @division.name %></h2>
+<% @teams.each do |team| %>
+  <h3><%= team.name %></h3>
+  <p>Wins: <%= team.wins %></p>
+  <p>Losses: <%= team.losses %></p>
+  <p>Ties: <%= team.ties %></p>
+  <p>Rank: <%= team.rank %></p>
+  <p>First Year: <%= team.year_started %></p>
+  <p class="last">Won a Super Bowl: <%= team.super_bowl %></p>
+<% end %>

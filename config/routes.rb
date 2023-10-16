@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  post '/divisions', to: 'divisions#create'
+  get '/divisions/new', to: 'divisions#new'
+  get '/divisions/:id/teams', to: 'division_teams#index'
   get '/teams', to: 'teams#index'
   get '/divisions', to: 'divisions#index'
-  get '/divisions/params[:id]', to: 'divisions#show'
+  get '/teams/:id', to: 'teams#show'
+  get '/divisions/:id', to: 'divisions#show'
 
 end

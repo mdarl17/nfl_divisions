@@ -1,0 +1,9 @@
+<%= form_with url: "/divisions", method: :post, data: { turbo: false } do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :conference %>
+<%= form.text_field :conference %>
+<%= form.label :sb_five %>
+<%= form.text_field :sb_five %>
+<%= form.submit 'Create Division' %>
+<% end %>

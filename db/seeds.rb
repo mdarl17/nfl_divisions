@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the record creation needed to seed the ,tabase with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -10,14 +10,14 @@ Team.destroy_all
 
 Division.destroy_all
 
-afc_north = Division.create!({ name: "AFC North", conference: "AFC", playoff_bye: false })
-afc_east = Division.create!({ name: "AFC East", conference: "AFC", playoff_bye: false })
-afc_south = Division.create!({ name: "AFC South", conference: "AFC", playoff_bye: false })
-afc_west = Division.create!({ name: "AFC West", conference: "AFC", playoff_bye: true })
-nfc_north = Division.create!({ name: "NFC North", conference: "NFC", playoff_bye: false })
-nfc_east = Division.create!({ name: "NFC East", conference: "NFC", playoff_bye: true })
-nfc_south = Division.create!({ name: "NFC South", conference: "NFC", playoff_bye: false })
-nfc_west = Division.create!({ name: "NFC West", conference: "NFC", playoff_bye: false })
+afc_north = Division.create!({ name: "AFC North", conference: "AFC",sb_five: false })
+afc_east = Division.create!({ name: "AFC East", conference: "AFC", sb_five: true })
+afc_south = Division.create!({ name: "AFC South", conference: "AFC", sb_five: false })
+afc_west = Division.create!({ name: "AFC West", conference: "AFC", sb_five: true })
+nfc_north = Division.create!({ name: "NFC North", conference: "NFC", sb_five: false })
+nfc_east = Division.create!({ name: "NFC East", conference: "NFC", sb_five: true })
+nfc_south = Division.create!({ name: "NFC South", conference: "NFC", sb_five: true })
+nfc_west = Division.create!({ name: "NFC West", conference: "NFC", sb_five: true })
 
 
 Team.create!([
@@ -27,6 +27,7 @@ Team.create!([
     wins: 243,
     losses: 190,
     ties: 1,
+    rank: 6,
     year_started: 1996,
     super_bowl: true
   },
@@ -37,6 +38,7 @@ Team.create!([
     wins: 385,
     losses: 463,
     ties: 5,
+    rank: 3,
     year_started: 1968,
     super_bowl: false
   },
@@ -47,6 +49,7 @@ Team.create!([
     wins: 501,
     losses: 524,
     ties: 11,
+    rank: 12,
     year_started: 1944,
     super_bowl: false
   },
@@ -57,6 +60,7 @@ Team.create!([
     wins: 661,
     losses: 571,
     ties: 22,
+    rank: 8,
     year_started: 1933,
     super_bowl: true
   },
@@ -67,6 +71,7 @@ Team.create!([
     wins: 462,
     losses: 495,
     ties: 8,
+    rank: 2,
     year_started: 1960,
     super_bowl: false
   },
@@ -77,6 +82,7 @@ Team.create!([
     wins: 485,
     losses: 393,
     ties: 4,
+    rank: 8,
     year_started: 1966,
     super_bowl: true
   },
@@ -87,6 +93,7 @@ Team.create!([
     wins: 537,
     losses: 420,
     ties: 9,
+    rank: 9,
     year_started: 1960,
     super_bowl: true
   },
@@ -97,6 +104,7 @@ Team.create!([
     wins: 421,
     losses: 537,
     ties: 8,
+    rank: 10,
     year_started: 1960,
     super_bowl: true
   }, 
@@ -107,6 +115,7 @@ Team.create!([
     wins: 142,
     losses: 195,
     ties: 1,
+    rank: 16,
     year_started: 2002,
     super_bowl: false
   },
@@ -117,6 +126,7 @@ Team.create!([
     wins: 547,
     losses: 493,
     ties: 8,
+    rank: 15,
     year_started: 1953,
     super_bowl: true
   },
@@ -127,6 +137,7 @@ Team.create!([
     wins: 189,
     losses: 261,
     ties: 0,
+    rank: 4,
     year_started: 1995,
     super_bowl: false
   },
@@ -137,6 +148,7 @@ Team.create!([
     wins: 470,
     losses: 490,
     ties: 6,
+    rank: 11,
     year_started: 1960,
     super_bowl: false
   },
@@ -147,6 +159,7 @@ Team.create!([
     wins: 500,
     losses: 456,
     ties: 10,
+    rank: 14,
     year_started: 1960,
     super_bowl: true
   },
@@ -157,6 +170,7 @@ Team.create!([
     wins: 521,
     losses: 433,
     ties: 12,
+    rank: 1,
     year_started: 1960,
     super_bowl: true
   },
@@ -167,6 +181,7 @@ Team.create!([
     wins: 497,
     losses: 458,
     ties: 11,
+    rank: 13,
     year_started: 1960,
     super_bowl: true
   },
@@ -177,8 +192,9 @@ Team.create!([
     wins: 478,
     losses: 477,
     ties: 11,
+    rank: 5,
     year_started: 1960,
-    super_bowl: true
+    super_bowl: false
   },
 
   {
@@ -187,6 +203,7 @@ Team.create!([
     wins: 786,
     losses: 624,
     ties: 42,
+    rank: 16,
     year_started: 1920,
     super_bowl: true
   },
@@ -197,6 +214,7 @@ Team.create!([
     wins: 579,
     losses: 702,
     ties: 34,
+    rank: 8,
     year_started: 1930,
     super_bowl: false
   },
@@ -207,6 +225,7 @@ Team.create!([
     wins: 790,
     losses: 590,
     ties: 38,
+    rank: 10,
     year_started: 1921,
     super_bowl: true
   },
@@ -217,6 +236,7 @@ Team.create!([
     wins: 516,
     losses: 425,
     ties: 11,
+    rank: 3,
     year_started: 1961,
     super_bowl: false
   },
@@ -227,6 +247,7 @@ Team.create!([
     wins: 550,
     losses: 408,
     ties: 6,
+    rank: 5,
     year_started: 1960,
     super_bowl: true
   },
@@ -237,6 +258,7 @@ Team.create!([
     wins: 715,
     losses: 638,
     ties: 34,
+    rank: 6,
     year_started: 1925,
     super_bowl: true
   },
@@ -247,6 +269,7 @@ Team.create!([
     wins: 613,
     losses: 630,
     ties: 27,
+    rank: 1,
     year_started: 1933,
     super_bowl: true
   },
@@ -257,6 +280,7 @@ Team.create!([
     wins: 625,
     losses: 630,
     ties: 29,
+    rank: 9,
     year_started: 1932,
     super_bowl: true
   },
@@ -267,6 +291,7 @@ Team.create!([
     wins: 383,
     losses: 493,
     ties: 6,
+    rank: 13,
     year_started: 1966,
     super_bowl: false
   },
@@ -277,6 +302,7 @@ Team.create!([
     wins: 212,
     losses: 237,
     ties: 1,
+    rank: 11,
     year_started: 1995,
     super_bowl: false
   },
@@ -287,7 +313,8 @@ Team.create!([
     wins: 403,
     losses: 460,
     ties: 5,
-    year_started: 1967,
+    rank: 12,
+    year_started: 196,
     super_bowl: true
   },
 
@@ -297,7 +324,8 @@ Team.create!([
     wins: 299,
     losses: 442,
     ties: 1,
-    year_started: 1976,
+    rank: 4,
+    year_started: 197,
     super_bowl: true
   },
 
@@ -307,7 +335,8 @@ Team.create!([
     wins: 581,
     losses: 790,
     ties: 41,
-    year_started: 1920,
+    rank: 15,
+    year_started: 192,
     super_bowl: false
   },
 
@@ -317,6 +346,7 @@ Team.create!([
     wins: 604,
     losses: 592,
     ties: 21,
+    rank: 14,
     year_started: 1937,
     super_bowl: true
   },
@@ -327,6 +357,7 @@ Team.create!([
     wins: 574,
     losses: 496,
     ties: 14,
+    rank: 2,
     year_started: 1950,
     super_bowl: true
   },
@@ -337,8 +368,9 @@ Team.create!([
     wins: 383,
     losses: 358,
     ties: 1,
+    rank: 7,
     year_started: 1976,
-    super_bowl: false
+    super_bowl: true
   },
 
 ])
