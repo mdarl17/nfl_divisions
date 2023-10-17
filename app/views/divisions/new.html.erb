@@ -1,9 +1,10 @@
 <%= form_with url: "/divisions", method: :post, data: { turbo: false } do |form| %>
 <%= form.label :name %>
-<%= form.text_field :name %>
+<%= form.text_field :name, :size => "45" %>
 <%= form.label :conference %>
 <%= form.text_field :conference %>
-<%= form.label :sb_five %>
-<%= form.text_field :sb_five %>
-<%= form.submit 'Create Division' %>
+<%=  form.label :SB_winner %>
+<span class="parenth">(past five years)</span>
+<%= form.text_field :sb_five, :size => "8" %>
+<%= form.submit 'Submit', :class => "submit" %>
 <% end %>

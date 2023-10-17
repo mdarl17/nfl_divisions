@@ -1,15 +1,10 @@
-<%= link_to "Teams", "/teams" %>
-  <h1>NFL Divisions</h1>
+
+<h1>NFL Divisions</h1>
 <%= link_to "New Division", "/divisions/new" %>
-  <h2>AFC</h2>
-  <% @divisions_sorted_by_created_date.each do |division| %>
-    <% if division.conference == "AFC" %>
-      <h3><%= link_to division.name, "/divisions/#{division.id}" %> <span class="time_stamp"><%= division.created_at%></span></h3>
-    <% end %>
-  <% end %>
-  <h2>NFC</h2>
-  <% @divisions_sorted_by_created_date.each do |division| %>
-    <% if division.conference == "NFC" %>
-      <h3><%= link_to division.name, "/divisions/#{division.id}" %></h3>
-    <% end %>
-  <% end %>
+
+<% @divisions_sorted_by_created_date.each do |division| %>
+  <span><h3><%= link_to division.name, "/divisions/#{division.id}" %><span class="time_stamp"><%= division.created_at%></span></h3>
+  <p>Conference: <%= division.conference%></p>
+  <p class="last">Won a Super Bowl: <%= division.sb_five %></p>
+<% end %>
+   

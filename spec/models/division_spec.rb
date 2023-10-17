@@ -39,4 +39,5 @@ RSpec.describe Division do
       expect(@afc_north.count).to eq(2)
     end
   end
+
 end 

@@ -1,7 +1,9 @@
-<%= link_to "Teams", "/teams" %>
+
 <article class="teams_show">
+  <%= link_to "Update Division", "/divisions/#{@division.id}/edit", method: :patch %>
   <h2><a href="<%= @division.id %>/teams"><%= @division.name %></a></h2>
   <p>Conference:&nbsp <%= @division.conference %></p>
   <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></p>
   <p>No. Teams: <%= @division.count %></p>
+  <%= link_to "#{@division.name} Teams", "/divisions/#{@division.id}/teams", method: :get %>
 </article>
