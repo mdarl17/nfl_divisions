@@ -2,7 +2,6 @@ class DivisionTeamsController < ApplicationController
   def index
     if (params[:name]) == "name_asc"
       @teams = Team.where(division_id: params[:id]).order(name: :asc)
-      @teams = @teams.shuffle
       @division = Division.find(params[:id])
     elsif (params[:name]) == "division"
       @division = Division.find(params[:id])
@@ -12,7 +11,6 @@ class DivisionTeamsController < ApplicationController
       @divisions = @divisions.shuffle
       @division = Division.find(params[:id])
       @teams = Team.where(division_id: params[:id])
-      @teams = @teams.shuffle
     end
   end
 

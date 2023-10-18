@@ -2,7 +2,6 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
-    @divisions.shuffle
     @division = Division.find(params[:id]) if params[:name] == "edit"
   end
 

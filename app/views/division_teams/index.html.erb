@@ -10,5 +10,6 @@
   <p>Ties: <%= team.ties %></p>
   <p>Rank: <%= team.rank %></p>
   <p>First Year: <%= team.year_started %></p>
-  <p class="last">Won a Super Bowl: <%= team.super_bowl %></p>
+  <p>Won a Super Bowl: <%= team.super_bowl %></p>
+  <p><%= button_to "Delete Team", "/teams/#{team.id}", method: :delete %></p>
 <% end %>

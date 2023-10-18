@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    @teams = Team.sort(:name) if (params[:sort]) == "name_asc"
+    @teams_sorted = Team.sort(:name) if (params[:sort]) == "name_asc"
     @teams = Team.hide_false
     # require 'pry'; binding.pry
     # @division = get_division
