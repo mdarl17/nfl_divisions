@@ -1,18 +1,22 @@
 
-<%= form_with url: "/divisions/#{params[:id]}/teams", method: :post, data: { turbo: false } do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
-<%= form.label :wins %>
-<%= form.text_field :wins, :size => "7" %>
-<%= form.label :losses %>
-<%= form.text_field :losses, :size => "7" %>
-<%= form.label :ties %>
-<%= form.text_field :ties, :size => "7" %>
-<%= form.label :rank %>
-<%= form.text_field :rank, :size => "4"%>
-<%= form.label :year_started %>
-<%= form.text_field :year_started, :size => "4" %>
-<%= form.label :super_bowl %>
-<%= form.text_field :super_bowl, :size => "5" %>
-<%= form.submit 'Submit', :class => "submit" %>
-<% end %>
+<div>
+    <div class="link">
+      <%= form_with url: "/divisions/#{params[:id]}/teams", method: :post, data: { turbo: false } do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <%= form.label :wins %>
+      <%= form.text_field :wins, :size => "7" %>
+      <%= form.label :losses %>
+      <%= form.text_field :losses, :size => "7" %>
+      <%= form.label :ties %>
+      <%= form.text_field :ties, :size => "7" %>
+      <%= form.label :rank %>
+      <%= form.text_field :rank, :size => "4"%>
+      <%= form.label :year_started %>
+      <%= form.text_field :year_started, :size => "4" %>
+      <%= form.label :super_bowl %>
+      <%= form.text_field :super_bowl, :size => "5" %>
+      <%= form.submit 'Submit', :class => "submit" %>
+    <% end %>
+    </div>
+</div>

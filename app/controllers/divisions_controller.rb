@@ -37,4 +37,14 @@ class DivisionsController < ApplicationController
 
     redirect_to "/divisions/#{division.id}"
   end
+
+  def destroy
+    division = Division.find(params[:id])
+    teams = Team.all
+    teams.each do |team|
+      if team.division_id == division.id
+        team.destroy
+      end
+    end
+  end
 end

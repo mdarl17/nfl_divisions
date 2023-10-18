@@ -16,7 +16,8 @@
 
  .link {
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 
+ }
 
  .t_name {
   margin-bottom: 30px;
@@ -28,9 +29,7 @@ body {
 }
 
 .container {
-  display: inline;
-  width: 25%;
-  overflow: hidden;
+  margin-top: 20px;
 }
 
 h1 {

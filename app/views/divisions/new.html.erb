@@ -1,10 +1,13 @@
-<%= form_with url: "/divisions", method: :post, data: { turbo: false } do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name, :size => "45" %>
-<%= form.label :conference %>
-<%= form.text_field :conference %>
-<%=  form.label :SB_winner %>
-<span class="parenth">(past five years)</span>
-<%= form.text_field :sb_five, :size => "8" %>
-<%= form.submit 'Submit', :class => "submit" %>
-<% end %>
+
+<div class="container">
+  <%= form_with url: "/divisions", method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, :size => "45" %>
+  <%= form.label :conference %>
+  <%= form.text_field :conference %>
+  <%=  form.label :SB_winner %>
+  <span class="parenth">(past five years)</span>
+  <%= form.text_field :sb_five, :size => "8" %>
+  <%= form.submit 'Submit', :class => "submit" %>
+  <% end %>
+</div>
