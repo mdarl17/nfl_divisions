@@ -3,11 +3,9 @@
 <div><%= link_to "New Division", "/divisions/new" %></div>
 
 <% @divisions.each do |division| %>
-<h3><%= link_to division.name, "/divisions/#{division.id}" %><span class="time_stamp"><%= division.created_at%> </span><span class="link-edit" style="font-size: 1em; font-weight: .5em"><%= link_to "Edit", "/divisions/#{division.id}/edit", method: :get %></span>
- 
-</h3>
-</h3>
+<h3><%= link_to division.name, "/divisions/#{division.id}" %><span class="time_stamp"><%= division.created_at%> </span><span class="link-edit" style="font-size: 1em; font-weight: .5em"><%= link_to "Edit", "/divisions/#{division.id}/edit", method: :get %></span></h3>
   <p>Conference: <%= division.conference%></p>
-  <p class="last">Won a Super Bowl: <%= division.sb_five %></p>
+  <p>Won a Super Bowl: <%= division.sb_five %></p>
+  <p><%= button_to "Delete Division", "/divisions/#{division.id}", method: :delete %></p>
 <% end %>
    
