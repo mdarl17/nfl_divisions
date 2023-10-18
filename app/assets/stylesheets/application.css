@@ -14,12 +14,12 @@
  *= require_self
  */
 
- .link {
+.link {
   margin-top: 20px;
-  margin-bottom: 
- }
+  margin-bottom: 30px;
+}
 
- .t_name {
+.t_name {
   margin-bottom: 30px;
 }
 
