@@ -4,6 +4,6 @@
   <p><%= link_to "#{@division.name} Teams", "/divisions/#{@division.id}/teams", params:{:name => "div_only"}, method: :get %></p>
   <p>Conference:&nbsp <%= @division.conference %><span class="link-edit"></p>
   <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></span></p>
-  <p class="last">No. Teams: <%= @division.count %></p>
-  <%= button_to "Delete", "/divisions/#{@division.id}", method: :delete %>
+  <p>No. Teams: <%= @division.count %></p>
+  <%= button_to "Delete Division", "/divisions/#{@division.id}", method: :delete %>
 </article>

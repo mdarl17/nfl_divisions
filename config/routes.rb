@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/teams/:id/edit', to: 'teams#edit'
   post '/divisions/:id/teams', to: 'division_teams#create'
   post '/divisions', to: 'divisions#create'
-  delete '/divisions/:id', to: 'divisions#destroy'  
+  delete '/divisions/:id', to: 'divisions#destroy'
+  delete '/teams/:id', to: 'teams#destroy'
 
 end

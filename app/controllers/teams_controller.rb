@@ -16,11 +16,6 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
-  def sort
-
-  end
-
-
   def update
     team = Team.find(params[:id])
     team.update!({        
@@ -37,4 +32,9 @@ class TeamsController < ApplicationController
     redirect_to "/teams/#{team.id}"
   end
 
+  def destroy
+    Team.destroy(params[:id])
+
+    redirect_to "/teams"
+  end
 end
