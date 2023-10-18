@@ -14,9 +14,28 @@
  *= require_self
  */
 
+.edit-link-sm {
+  font-size: .6em;
+  font-weight: 500;
+}
+
+.team-edit-container {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
 .link {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.link-edit {
+  margin-left: 8px;
+  margin-right: 15px;
+}
+
+.txt-field {
+  margin-left: 20px;
 }
 
 .t_name {
@@ -35,6 +54,7 @@ body {
 h1 {
   color: #222;
   font-family: "Roboto";
+  margin-top: 1.5em;
 }
 
 .team {
@@ -52,6 +72,7 @@ h1 {
 h1 {
   font-size: 1.8em;
   margin-bottom: 25px;
+  margin-top: 15px;
 }
 
 .time_stamp {
@@ -65,5 +86,10 @@ h1 {
 .div_update_link {
   margin-top: 30px;
   margin-bottom: -10px;
+}
+
+.nfl-hdr {
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 

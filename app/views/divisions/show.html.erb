@@ -1,9 +1,9 @@
 
 <article class="teams_show">
-  <div class="div_update_link link"><%= link_to "Update Division", "/divisions/#{@division.id}/edit", method: :patch %></div>
-  <h1><%= @division.name %></h1>
-  <p>Conference:&nbsp <%= @division.conference %></p>
-  <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></p>
-  <p class="last">No. Teams: <%= @division.count %></p>
+  <h1><%= @division.name %><span class="link-edit edit-link-sm" style="margin-left: 20px"><%= link_to "Edit", "/divisions/#{@division.id}/edit", method: :patch %><span class="link-edit" style="margin-left: 15px"></h1>
   <p><%= link_to "#{@division.name} Teams", "/divisions/#{@division.id}/teams", params:{:name => "div_only"}, method: :get %></p>
+  <p>Conference:&nbsp <%= @division.conference %><span class="link-edit"></p>
+  <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></span></p>
+  <p class="last">No. Teams: <%= @division.count %></p>
+  <%= button_to "Delete", "/divisions/#{@division.id}", method: :delete %>
 </article>

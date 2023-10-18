@@ -4,6 +4,8 @@ class TeamsController < ApplicationController
     @teams = Team.all
     @teams = Team.sort(:name) if (params[:sort]) == "name_asc"
     @teams = Team.hide_false
+    # require 'pry'; binding.pry
+    # @division = get_division
   end
 
   def show
@@ -15,7 +17,7 @@ class TeamsController < ApplicationController
   end
 
   def sort
-    
+
   end
 
 

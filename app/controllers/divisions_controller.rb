@@ -3,7 +3,7 @@ class DivisionsController < ApplicationController
   def index
     @divisions = Division.all
     @divisions.shuffle
-
+    @division = Division.find(params[:id]) if params[:name] == "edit"
   end
 
   def show
@@ -46,5 +46,8 @@ class DivisionsController < ApplicationController
         team.destroy
       end
     end
+    division.destroy
+    
+    redirect_to "/divisions"
   end
 end

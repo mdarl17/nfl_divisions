@@ -1,9 +1,8 @@
 
-<h1><%= @team.name %></h1>
+<div><h1><%= @team.name %></h1><%= link_to 'Edit', "/teams/#{@team.id}/edit", params:{:name => "division"} %></div>
 <p>Wins: <%= @team.wins %></p>
 <p>Losses: <%= @team.losses %></p>
 <p>Ties: <%= @team.ties %></p>
 <p>Rank: <%= @team.rank %></p>
 <p>First Year: <%= @team.year_started %></p>
 <p>Won a Super Bowl: <%= @team.super_bowl %></p>
-<%= link_to 'Update Team', "/teams/#{@team.id}/edit", params:{:name => "division"} %>

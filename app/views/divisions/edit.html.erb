@@ -1,10 +1,15 @@
-<%= form_with url: "/divisions/#{@division.id}", method: :patch, data: { turbo: false } do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name, :size => "45", :value => @division.name %>
-<%= form.label :conference %>
-<%= form.text_field :conference, :value => @division.conference %>
-<%=  form.label :SB_winner %>
-<span class="parenth">(past five years)</span>
-<%= form.text_field :sb_five, :size => "8", :value => @division.sb_five %>
-<%= form.submit 'Update', :class => "submit" %>
-<% end %>
+
+<div>
+  <div class="link">
+    <%= form_with url: "/divisions/#{@division.id}", method: :patch, data: { turbo: false } do |form| %>
+    <%= form.label :name %>
+    <span class="link-edit"><%= form.text_field :name, :size => "45", :value => @division.name %></span>
+    <%= form.label :conference %>
+    <span class="link-edit"><%= form.text_field :conference, :value => @division.conference %></span>
+    <%=  form.label :Super_Bowl_winner %>
+    <span class="parenth">(past five years)</span>
+    <span class="link-edit"><%= form.text_field :sb_five, :size => "8", :value => @division.sb_five %></span>
+    <%= form.submit 'Update', :class => "submit" %>
+    <% end %>
+  </div>
+</div>
