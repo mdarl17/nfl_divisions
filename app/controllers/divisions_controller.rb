@@ -2,7 +2,6 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
-    @division = Division.find(params[:id]) if params[:name] == "edit"
   end
 
   def show
@@ -38,15 +37,8 @@ class DivisionsController < ApplicationController
   end
 
   def destroy
-    division = Division.find(params[:id])
-    teams = Team.all
-    teams.each do |team|
-      if team.division_id == division.id
-        team.destroy
-      end
-    end
-    division.destroy
-    
+    Division.destroy(params[:id])
+
     redirect_to "/divisions"
   end
 end

@@ -1,23 +1,17 @@
 class DivisionTeamsController < ApplicationController
   def index
     if (params[:name]) == "name_asc"
-      @teams = Team.where(division_id: params[:id]).order(name: :asc)
+      @teams = Team.teams_in_division(params[:id])
+      @teams_ordered = Team.order(name: :asc)
       @division = Division.find(params[:id])
     elsif (params[:name]) == "division"
       @division = Division.find(params[:id])
     else
-    # @teams = Team.all
       @divisions = Division.all
-      @divisions = @divisions.shuffle
       @division = Division.find(params[:id])
-      @teams = Team.where(division_id: params[:id])
+      @teams = Team.teams_in_division(params[:id])
     end
   end
-
-  # def show
-  #   require 'pry'; binding.pry
-  #   @divisions = Division.find(params[:id])
-  # end
 
   def new
   end

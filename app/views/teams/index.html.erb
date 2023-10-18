@@ -1,7 +1,7 @@
 
 <h1 class="nfl-hdr">NFL Teams</h1>
   <article class="container">
-    <% @teams.each do |team| %>
+    <% @teams_sorted.each do |team| %>
       <p class="team"><a href="/teams/<%= team.id %>"><%= team.name %></a><span style="margin-left: 10px" class="link"><%= link_to "Edit", "/teams/#{team.id}/edit", method: :get %></span></p>
       <p>Wins: <%= team.wins %>
       <p>Losses: <%= team.losses %>

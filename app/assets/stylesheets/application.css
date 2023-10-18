@@ -111,3 +111,8 @@ button {
 button:visited {
   color: purple;
 }
+
+.new-del-grp {
+  display: flex;
+  flex-direction: row;
+}
