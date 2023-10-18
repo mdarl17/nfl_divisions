@@ -6,7 +6,6 @@ class Division < ApplicationRecord
   end
 
   def count
-    # require 'pry'; binding.pry
     teams.count
   end
 

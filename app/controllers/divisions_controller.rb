@@ -2,7 +2,7 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
-    @divisions_sorted_by_created_date = Division.sort_by_created_date
+
   end
 
   def show

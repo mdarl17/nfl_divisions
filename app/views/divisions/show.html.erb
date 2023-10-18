@@ -1,9 +1,9 @@
 
 <article class="teams_show">
-  <%= link_to "Update Division", "/divisions/#{@division.id}/edit", method: :patch %>
-  <h2><a href="<%= @division.id %>/teams"><%= @division.name %></a></h2>
+  <div class="div_update_link link"><%= link_to "Update Division", "/divisions/#{@division.id}/edit", method: :patch %></div>
+  <h1><%= @division.name %></h1>
   <p>Conference:&nbsp <%= @division.conference %></p>
   <p>Super Bowl <span class="subtext">(past five seasons)</span>: &nbsp<%= @division.sb_five %></p>
-  <p>No. Teams: <%= @division.count %></p>
-  <%= link_to "#{@division.name} Teams", "/divisions/#{@division.id}/teams", method: :get %>
+  <p class="last">No. Teams: <%= @division.count %></p>
+  <p><%= link_to "#{@division.name} Teams", "/divisions/#{@division.id}/teams", params:{:name => "div_only"}, method: :get %></p>
 </article>

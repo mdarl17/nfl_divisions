@@ -1,6 +1,8 @@
-<%= link_to "Teams", "/teams" %>
 
 <h2><%= @division.name %></h2>
+<span><div class="container"><%= link_to "New Team", "/divisions/#{@division.id}/teams/new"%></div>
+  <div><% div_teams_path = "/divisions/#{@division.id}/teams" %></div>
+<div class="link"><%= link_to "Sort Names",params:{:name => "name_asc"}%></div></span>
 <% @teams.each do |team| %>
   <h3><%= team.name %></h3>
   <p>Wins: <%= team.wins %></p>

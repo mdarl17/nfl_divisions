@@ -2,8 +2,11 @@
 <h1>NFL Divisions</h1>
 <%= link_to "New Division", "/divisions/new" %>
 
-<% @divisions_sorted_by_created_date.each do |division| %>
-  <span><h3><%= link_to division.name, "/divisions/#{division.id}" %><span class="time_stamp"><%= division.created_at%></span></h3>
+<% @divisions.each do |division| %>
+<h3><%= link_to division.name, "/divisions/#{division.id}" %><span class="time_stamp"><%= division.created_at%>
+  <%= link_to "Edit", "/divisions/#{division.id}/edit", method: :get %>
+  </span>
+</h3>
   <p>Conference: <%= division.conference%></p>
   <p class="last">Won a Super Bowl: <%= division.sb_five %></p>
 <% end %>

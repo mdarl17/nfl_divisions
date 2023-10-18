@@ -28,16 +28,21 @@ RSpec.describe Division do
       }
     ) 
   end
-  # describe "divs" do 
-  #   it "lists teams by rank" do 
-  #     expect(@afc_north.playoff_teams).to eq([])
-  #   end
-  # end
+  describe "divisions#index" do 
+    it "returns the team name" do
+      expect(@afc_north.name).to eq("AFC North")
+      expect(@afc_north.teams).to eq([@ravens, @browns])
+      require 'pry'; binding.pry
+    end
+  end
+
   describe "count" do
     it "displays a count of all the teams in the selected division" do
       puts @afc_north.count
       expect(@afc_north.count).to eq(2)
     end
   end
+
+
 
 end 
