@@ -2,6 +2,7 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
+    @divisions.shuffle
 
   end
 
