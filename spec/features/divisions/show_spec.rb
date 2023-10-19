@@ -1,9 +1,7 @@
 RSpec.describe "divisions show page", type: :feature do
-  it "has a link that can sort divisions alphabetically" do
-    let!(afc_north) { Division.create!(name: "AFC North", conference: "AFC", sb_five: true) }
-    # @nfc_south = Division.create({ name: "NFC North", conference: "NFC", sb_five: false })
+  describe "index#show" do
+    it "displays one record with the conference and super bowl winner in the past five years boolean attributes" do 
+      visit "/divisions/1"
+    end
   end
-
-    visit "/divisions/#{@afc_north.id}"
-    expect(page).to have_content("AFC North")
 end

@@ -5,6 +5,7 @@ RSpec.describe "divisions#index", type: :feature do
     @afc_north = Division.create!({ name: "AFC North", conference: "AFC",sb_five: false })
     @afc_west = Division.create!({ name: "AFC West", conference: "AFC", sb_five: true })
     @nfc_north = Division.create!({ name: "NFC North", conference: "NFC", sb_five: false })
+
     @ravens = @afc_north.teams.create!(
       {
         division_id: @afc_north.id,
@@ -79,13 +80,43 @@ RSpec.describe "divisions#index", type: :feature do
   end
 
   describe "when I visit '/parents'" do
-    visit "/divisions"
+    it "shows the name of each division in the database" do
+      
+      visit "/divisions"
 
-    expect(page).to have_content(@afc_north.name)
-    expect(page).to have_content(@afc_west.name)
-    expect(page).to have_content(@nfc_north.name)
+      expect(page).to have_content(@afc_north.name)
+      expect(page).to have_content(@afc_west.name)
+      expect(page).to have_content(@nfc_north.name)
+    end
 
+    it "orders each division by when it was creeated, with the first created unit first" do
+
+      visit "/divisions"
+      expect(@afc_north.name).to appear_before(@afc_west.name)
+      expect(@afc_west.name).to appear_before(@nfc_north.name)
+
+      expect(page).to have_content(@afc_north.created_at)
+      expect(page).to have_content(@afc_west.created_at)
+      expect(page).to have_content(@nfc_north.created_at)
+    end
+
+    it "has a link on every page that takes me to the /divisions index page" do
+      
+      visit "/divisions"
+
+      expect(page).to have_link("Divisions")
+      expect(page).to have_content("Divisions")
+      click_link("Divisions")
+
+      visit "/divisions/#{@afc_north.id}"
+
+      expect(page).to have_link("Divisions")
+      click_link("Divisions")
+
+      expect(page).to have_current_path("/divisions")
+      expect(page).to have_content(@afc_north.name)
+      expect(page).to have_content(@afc_west.name)
+      expect(page).to have_content(@nfc_north.name)
+    end
   end
-
 end
-
