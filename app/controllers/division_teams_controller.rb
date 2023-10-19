@@ -1,15 +1,9 @@
 class DivisionTeamsController < ApplicationController
   def index
+    @division = Division.find(params[:id])
+    @teams = @division.teams
     if (params[:name]) == "name_asc"
-      @teams = Team.teams_in_division(params[:id])
-      @teams_ordered = Team.order(name: :asc)
-      @division = Division.find(params[:id])
-    elsif (params[:name]) == "division"
-      @division = Division.find(params[:id])
-    else
-      @divisions = Division.all
-      @division = Division.find(params[:id])
-      @teams = Team.teams_in_division(params[:id])
+      @teams = @division.teams.sort_by_name
     end
   end
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/divisions/:id/edit', to: 'divisions#edit'
   patch '/divisions/:id', to: 'divisions#update'
   patch '/teams/:id', to: 'teams#update'
+  patch '/teams', to: 'teams#index'
   get '/teams/:id/edit', to: 'teams#edit'
   post '/divisions/:id/teams', to: 'division_teams#create'
   post '/divisions', to: 'divisions#create'

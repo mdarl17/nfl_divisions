@@ -1,9 +1,10 @@
 class TeamsController < ApplicationController
 
   def index
-    @teams = Team.all
-    @teams_sorted = Team.sort_by_name
-    @teams = Team.hide_false
+    @teams = Team.sort_by_name
+    if params[:sb_winners] == 1
+      @teams = Team.hide_boolean
+    end
   end
 
   def show
